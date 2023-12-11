@@ -1,13 +1,13 @@
-FROM maven:3.8.4 as build
-WORKDIR /app
-COPY pom.xml .
-RUN mvn dependency:resolve
+FROM openjdk:11-jdk
 
-COPY src/ src/
-RUN mvn clean install
-
-FROM openjdk:11.0
+# Set the working directory in the container
 WORKDIR /app
-COPY --from=build /app/target/event.jar /app/
+
+# Copy the JAR file from the host to the container
+COPY target/eventsProjects-1.0.0-SNAPSHOT.jar /app/eventsProjects.jar
+
+# Expose the port that your Spring Boot application listens on (change as needed)
 EXPOSE 8089
-CMD ["java","-jar","event.jar"]
+
+# Command to run your Spring Boot application
+CMD ["java", "-jar", "eventsProjects.jar"]
