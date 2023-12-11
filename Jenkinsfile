@@ -77,9 +77,8 @@ pipeline{
 
                                   script{
 
-                                   
-                sh "docker login -u aya343 -p 213JFT9182\\(s\\)"
-                sh "docker push aya343/event:1.0"
+                    sh "docker login -u aya343 -p aya123456"
+                    sh "docker push aya343/event:1.0"
             
                   }
 
