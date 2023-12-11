@@ -67,7 +67,7 @@ pipeline{
             }
         }
                                 }
-                        }
+                        
                   stage('Docker Image build'){
 
                               steps{
@@ -86,14 +86,15 @@ pipeline{
 
                                   script{
 
-                                   steps {
+                                   
                 sh "docker login -u aya343 -p 213JFT9182\\(s\\)"
                 sh "docker push aya343/event:1.0.0"
-            }
+            
                   }
 
                                   }
                               }
                           }
+}
 
 
