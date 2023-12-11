@@ -65,7 +65,7 @@ pipeline{
 
                                   script{
 
-                 sh 'docker build -t aya/event:1.0.0 .'
+                 sh 'docker build -t aya/event:1.0 .'
 
 
                                   }
@@ -79,7 +79,7 @@ pipeline{
 
                                    
                 sh "docker login -u aya343 -p 213JFT9182\\(s\\)"
-                sh "docker push aya343/event:1.0.0"
+                sh "docker push aya343/event:1.0"
             
                   }
 
